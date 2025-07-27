@@ -11,7 +11,7 @@ on:
         required: true
         default: 'error.html'
 env:
-  BUCKET_NAME: website-artifacts
+  BUCKET_NAME: sureshsm-website-artifacts
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
       - name: Create CloudFormation Stack
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: uda-artifact
+          name: uda-sureshsm-artifact
           template: uda_artifact.yml
           no-fail-on-empty-changeset: "1"
           
@@ -40,7 +40,7 @@ jobs:
       - name: Show S3 bucket website URL
         run: |
           aws cloudformation describe-stacks \
-            --stack-name uda-artifact \
+            --stack-name uda-sureshsm-artifact \
             --query 'Stacks[0].Outputs[?OutputKey==`ArtifactBucketWebsiteURL`].OutputValue' \
             --output text
 
