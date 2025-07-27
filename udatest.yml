@@ -1,18 +1,19 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Create an S3 bucket
 Resources:
-  UdaBucket:
+  UdaSMBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: uda-iye-bucket
+      BucketName: sureshsm20250727bucket
+
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
 Outputs:
   WebsiteURL:
-    Value: !GetAtt UdaBucket.WebsiteURL
+    Value: !GetAtt UdaSMBucket.WebsiteURL
     Description: URL for website hosted on S3
   S3BucketSecureURL:
-    Value: !GetAtt UdaBucket.DomainName
+    Value: !GetAtt UdaSMBucket.DomainName
     Description: Name of S3 bucket to hold website content
   
