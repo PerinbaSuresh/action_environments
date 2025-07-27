@@ -23,6 +23,6 @@ jobs: # Jobs defined in the workflow
     - name: Create CloudFormation Stack
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
-        name: udatest
+        name: udasureshsmtest
         template: udatest.yml
         
