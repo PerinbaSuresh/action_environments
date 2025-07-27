@@ -4,7 +4,7 @@ Resources:
   UdaSMBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: uda-sureshsm-bucket
+      BucketName: sureshsm20250727bucket
 
       WebsiteConfiguration:
         IndexDocument: index.html
